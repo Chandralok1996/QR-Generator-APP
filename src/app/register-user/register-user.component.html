@@ -1,0 +1,122 @@
+<section class="bg-img shadow">
+        <div class="row py-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="card shadow float-right">
+                        <div class="text-center">
+                            <img src="../../assets/registerUser1.png" alt="logo" style="width: 100px; height: 100px;">
+                            <h1 class="mt-2"
+                                style="font-weight: 600; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                Register Here!</h1>
+                        </div><br>
+                       
+                            <form [formGroup]="form" (ngSubmit)="registerUser()">
+                                <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>First Name</mat-label>
+                                            <input matInput placeholder="Enter your first name"
+                                                formControlName="first_name" type="text">
+                                            <mat-error class="mb-4" *ngIf="formCtrl.first_name.errors?.required">First name is
+                                                required.</mat-error>
+                                        </mat-form-field>
+                                 </div>
+                                 <div class="col-md-4">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Last Name</mat-label>
+                                            <input matInput placeholder="Enter your last name"
+                                                formControlName="last_name" type="text">
+                                            <mat-error class="mb-4" *ngIf="formCtrl.last_name.errors?.required">Last name is
+                                                required.</mat-error>
+                                        </mat-form-field>
+                                   </div>
+                                   <div class="col-md-4">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Gender</mat-label>
+                                        <mat-select matInput placeholder="select gender"
+                                        formControlName="gender" type="select">
+                                            <mat-option *ngFor="let gen of gender" [value]="gen.value">
+                                                {{gen.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                        <div class="col-6 text-start">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Mobile No.</mat-label>
+                                            <input matInput placeholder="Enter your mobile number"
+                                                formControlName="mobile" minlength="10" maxlength="10" pattern="[a-zA-Z0-9\s]+">
+                                            <mat-error class="mb-4" *ngIf="formCtrl.mobile.errors?.required">Mobile number is
+                                                required</mat-error>
+                                                <mat-error class="mb-4" *ngIf="formCtrl.mobile.errors?.pattern">Mobile number is
+                                                    invalid</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email ID</mat-label>
+                                            <input matInput placeholder="Enter your email id" formControlName="emailid"
+                                                type="email">
+                                            <mat-error class="mb-4" *ngIf="formCtrl.emailid.errors?.required">Email id is
+                                                required</mat-error>
+                                                <mat-error *ngIf="formCtrl.emailid.errors?.pattern">Please enter valid email address</mat-error>
+
+                                        </mat-form-field>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                  
+                                        <div class="col-6 mt-2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Company Name</mat-label>
+                                            <input matInput placeholder="Enter your company name"
+                                                formControlName="company_name" type="text"> 
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput placeholder="Enter your password" autocomplete="off"
+                                                formControlName="password" [type]="showPass ? 'password' : 'text'">
+                                                <mat-icon matSuffix (click)="showPass = !showPass"><span class="material-symbols-outlined"> {{showPass ? 'visibility' : 'visibility_off'}} </span></mat-icon>
+                                                <mat-error *ngIf="formCtrl.password.errors?.required">Password is
+                                                    required</mat-error>
+                                                    <mat-error *ngIf="formCtrl.password.errors?.pattern">Password must contain more than 5 characters,1 numeric,1 upper case letter and 1 special character($@$!%*?&).</mat-error>
+                                        </mat-form-field>
+                              </div>
+                                </div>   
+                                <br>                           
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-secondary me-2" routerLink="/home">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                                </div>
+                            </form>
+                      
+                        <!-- <div class="row px-2">
+                            <div class="col-6 text-start">
+                                <strong>New User?</strong>&nbsp;&nbsp;<a [routerLink]="['/register']" routerLinkActive="router-link-active"><strong> Register Here !!</strong></a>
+                            </div>
+                            <div class="col-6 text-end">
+                                <a [routerLink]="['/reset-password']" routerLinkActive="router-link-active"><strong>Forget Password</strong></a>
+                            </div>
+                        </div> -->
+                        <br>
+                        <div class=" text-center mt-5">
+                            <span style="color: brown;">Powered by :</span> <a href="https://augtrans.com/"> Augmented
+                                Transformations</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+  
+</section>

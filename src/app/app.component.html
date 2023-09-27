@@ -1,0 +1,9 @@
+<mat-sidenav-container > 
+   <mat-sidenav-content> 
+     <app-header *ngIf="router.url != '/sign-in'"></app-header>
+     <main>
+       <router-outlet></router-outlet>
+     </main>
+     
+   </mat-sidenav-content> 
+  </mat-sidenav-container>

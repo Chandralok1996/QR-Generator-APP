@@ -1,0 +1,48 @@
+<section>
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="model-menu">
+            <li (click)="refresh()"><button class="btn badge bg-primary" title="Refresh"><i class="fas fa-sync-alt"></i></button></li> |
+            <li><a>View Contact Details</a></li>/
+            <li><a>{{user_id}}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-12 card mt-2">
+          <div class="sidebarMain-1">
+            <div class="row text-center bg-primary text-white">
+              <h1>Contact detail</h1>
+            </div>
+            <div class="row mt-2" *ngFor="let data of contactData; let i = index">
+             
+              
+                  <div class="col-lg-4">
+                    <strong>Contact ID : {{data.contact_id}}</strong><br>
+                    <strong>Country Code : {{data.countrycode}}</strong><br>
+                    <strong>Phone Number : {{data.phonenumber}}</strong><br>
+                    <strong>Country : {{data.country}}</strong><br>
+                    <strong>State : {{data.state}}</strong><br>
+                  </div>
+             
+                  <div class="col-lg-4">
+                    <strong>Name : {{data.firstname}} {{data.lastname}}</strong><br>
+                    <strong>Contact Number : {{data.contactnumber}}</strong><br>
+                    <strong>Company Name : {{data.companyname}}</strong><br>
+                    <strong>Street : {{data.street}}</strong><br>
+                    <strong>Job Profile : {{data.jobprofile}}</strong>
+                  </div>
+                  <div class="col-lg-4">
+                    <strong>City : {{data.city}}</strong><br>
+                    <strong>FAX Number : {{data.faxnumber}}</strong><br>
+                    <strong>Email : {{data.email}}</strong><br>
+                    <strong>PIN Code : {{data.pincode}}</strong><br>
+                    <strong>Website : {{data.website}}</strong>
+                    </div>
+                    <hr class="mt-2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

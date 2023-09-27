@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="shadow mb-2">
+
+  <!-- <div>
+    <button mat-icon-button (click)="openSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div> -->
+  <div class="mr-4">
+  <span><span class="material-icons">&nbsp;&nbsp;&nbsp;qr_code</span>QR Code App</span>
+</div>
+  
+  <span class="spacer"></span>
+  <!-- <div class="searchBar d-flex justify-content-center align-items-center">
+    <input class="form-control" type="search" #input placeholder="search..." (keyup)="applyFilter($event)">
+   </div> -->
+
+  
+   <p class="small mt-2">{{ currentDateTime }}</p> &nbsp;&nbsp;
+  <!-- <button mat-icon-button> <mat-icon>message</mat-icon> </button> &nbsp; -->
+  <!-- <button mat-icon-button> <mat-icon matBadge="12" matBadgeColor="warn">notifications</mat-icon> </button> &nbsp;&nbsp; -->
+
+  <span class="" style="font-size: 16px;margin-top: 10px;">
+      {{userName}}
+  <p class="" style="font-size: 12px;margin-top: -10px;"><img src="../../../assets/on.png" style="width: 10px; height: 10px;"> &nbsp; Online</p>
+  
+    </span>
+  <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon></button> 
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><mat-icon>person</mat-icon><span>User Profile</span></button>
+    <button mat-menu-item><mat-icon>settings</mat-icon><span>Settings</span></button>
+    <button mat-menu-item (click)="signOut()"><mat-icon>power_settings_new</mat-icon><span>Sign Out</span></button>
+  </mat-menu>
+</mat-toolbar>
+
+
