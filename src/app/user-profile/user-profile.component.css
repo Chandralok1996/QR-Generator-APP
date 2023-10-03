@@ -1,0 +1,251 @@
+
+.sidebar {
+    position: fixed;
+    z-index: 0;
+    margin-top: 110px;
+    margin-left: 10px;
+    background-color:white;
+    overflow-x: hidden;
+    padding-top: 16px;
+    border: #818181 1px solid;
+    border-radius: 6px;
+    /* position: absolute; */
+    width: 257px;
+    height: 648px;
+    color:white;
+    background:#696969;
+  }
+
+  .btn-back{
+    background-color: #ffffff !important;
+    color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;
+    margin-bottom: 5px !important;
+    margin-left: 15px;
+    width: 80px !important;
+    height: 40px !important;
+  }
+  
+  .btn-back:hover{
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+  }
+  
+  .btn-back:hover .bi-arrow-return-left{
+    fill: #ffffff !important;
+  }
+
+  #form{
+     /* position: relative;
+      height: 530px;
+     
+      margin-left: 50px;
+     
+      margin-top: 0px;
+      border-radius: 6px;
+      background-color: white;
+      margin-right: 10px; */
+  }
+  #online{
+    position: relative;
+    width: auto;
+    height: 21px;
+    /* left: 95px; */
+    margin-top: 10px;
+    
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    
+    color: #FFFFFF;
+  }
+
+  #imguser{
+    position: relative;
+  width: 90px;
+  height: 90px;
+  
+  top: 40px;
+  }
+
+  #p1{
+    position: relative;
+  width: auto;
+  height: 21px;
+  /* left: 70px; */
+  margin-top: 50px;
+  
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  
+  color: #FFFFFF;
+  }
+
+  #dashic{
+    float: left;
+    width:auto;
+    height:22.5px;
+    margin-left: 35px;
+    margin-top: -3px;
+  }
+  .button1{
+    width:257px;
+    height:35px;
+    background-color:#696969;
+    border: #696969 1px solid;
+    color:white;
+    font-family: Raleway;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+    
+  }
+
+  .buttonb:hover{
+    border:#5AB190 1px solid;
+  }
+  .buttonb:active,.buttonb:focus{
+    border-color:#5AB190 1px solid;
+    outline: #5AB190 1px auto;
+  }
+  .buttonb::selection{
+    border: white 1px solid;
+  }
+  #myprofile{
+      margin-top: 30px;
+      margin-left: 20px;
+      
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+
+color:  #2A2B2D;
+  }
+  #myprofile1{
+    margin-top: 30px;
+    margin-left: 20px;
+    
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+
+color:  #2A2B2D;
+}
+#id{
+    margin-left: 20px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #2A2B2D;
+
+}
+  
+  #imguser1{
+    position: relative;
+  width: 134px;
+  height: 134px;
+  margin-left: 20px;
+  
+  }
+
+  #bcase{
+    height: 15px;
+    width: 20px;
+  }
+
+  #bcase{
+    height: 17.72px;
+    width: 14px;
+   
+  }
+  #bcase1{
+    height: 12px;
+    width: 16px;
+    /* margin-left:-80px; */
+    /* margin-top: -30px; */
+  }
+  #bcase2{
+    height: 14px;
+    width: 16px;
+    /* margin-left:-80px; */
+    /* margin-top: -30px; */
+  }
+  #bcase3{
+    height: 15px;
+    width: 20px;
+    /* margin-left:-80px; */
+    /* margin-top: -30px; */
+  }
+  #designation{
+      margin-left: 25px;
+      margin-top: -10px;
+      font-family: Raleway;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+
+color: #2A2B2D;
+
+  }
+  #designation1{
+    margin-left: 75px;
+    margin-top: -5px;
+   
+font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #2A2B2D;
+
+
+}
+#list{
+    font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+font-weight: bold;
+
+}
+
+#list1{
+    font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+
+}
+.vl {
+    border-left: 1px solid #979797;
+      height: 150px;
+      margin-left: 70px;
+      margin-top: 10px;
+  }
+  #edit{
+    position: relative;
+  width: 207px;
+  height: 30px;
+  background-color: #3f51b5;
+  border: 1px solid #00B4EB;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  }

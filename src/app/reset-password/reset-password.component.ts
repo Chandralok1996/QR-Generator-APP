@@ -33,11 +33,19 @@ export class ResetPasswordComponent {
   listData: any;
   userDetails: any;
   minPw = 8;
+  pageLabel:any;
 
 
   constructor(private toaster: ToasterService, private service: AppService, public router: Router) { }
 
   ngOnInit(): void {
+    if(this.router.url == '/reset-password')
+    {
+      this.pageLabel="Reset Password";
+    }
+    else{
+      this.pageLabel="Change Password";
+    }
     this.form = new FormGroup({
       loginname: new FormControl('',[(Validators.required)]),
       password: new FormControl('', [(Validators.required,Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{5,}$"))]),

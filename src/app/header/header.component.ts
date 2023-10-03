@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, SimpleChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/_service';
 
@@ -10,19 +11,27 @@ import { AppService } from 'src/app/_service';
 
 export class HeaderComponent {
 //  @Output() SideNavToggle = new EventEmitter();  
+date: Date = new Date();
   dataSource: any;
   user: any;
   userName: any;
   currentDateTime: any;
   userRole:any;
   userDetails:any;
-  constructor(public router: Router, private service: AppService) {
-   
-  }
+  userid:any; 
+
+  constructor(public router: Router,public service: AppService, 
+    public dialog: MatDialog,) { 
+      setInterval(() => {
+        this.date = new Date()
+      }, 1000)
+    }
+
   ngOnInit() {
     this.userDetails=localStorage.getItem('user');
     this.user = JSON.parse(this.userDetails);
     this.userName = this.user.username;
+    this.userid = this.user.userid;
      this.updateDateTime();
     setInterval(() => this.updateDateTime(), 1000); // Update every 1 second
   }

@@ -1,0 +1,267 @@
+<div class="container-fluid">
+  <form
+    class="form-group"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    #ff="ngForm"
+    name="form"
+  >
+    <div class="col-sm-12 col-md-12">
+   
+
+      <hr class="" />
+      <!-- <div class="row mt-6">
+        
+          <div class="profile-txt">
+            <p
+              for=""
+              style="font-weight: 600; margin-bottom: 0; font-size: 22px"
+            >
+              {{ title1 }}&nbsp;{{ fname }}&nbsp;{{ mname }}&nbsp;{{ lname }}
+            </p>
+
+           
+            <p style="font-size: 14px; font-weight: 600">
+              {{ email }} &nbsp;&nbsp;&nbsp;{{ mobile }}
+            </p>
+          </div>
+
+         
+      </div> -->
+      <div class="scroll">
+        <div class="row">
+          <div
+            class="col-md-11 card"
+            style="padding: 15px"
+            *ngIf="div1"
+            [ngClass]="statusClass"
+            (click)="setActiveClass1()"
+          >
+            <div class="">
+              <h1 class="font-sans f-20">User Information</h1>
+            </div>
+            <div class="row">
+              <!-- <div class="col-md-12"> -->
+              <div class="row mt-2">
+                <!-- <div class="col-md-2">
+
+                                    </div> -->
+                <div class="col-md-5">
+                    <label class="lbl"
+                    >First Name <span class="required-asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    formControlName="first_name"
+                    class="form-control f-10"
+                    placeholder="First Name"
+                    [(ngModel)]="fname"
+                    [ngClass]="{
+                      'is-invalid': submitted && f.first_name.errors
+                    }"
+                  />
+                  <div
+                    *ngIf="
+                      f.first_name.invalid &&
+                      (f.first_name.dirty || f.first_name.touched)
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        (submitted && f.first_name.errors) ||
+                        (f.first_name.invalid &&
+                          (f.first_name.dirty || f.first_name.touched))
+                      "
+                      style="color: red; font-size: 12px"
+                    >
+                      <div *ngIf="f.first_name.errors.required">
+                        First Name is required
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <label class="lbl"
+                    >Middle Name</label
+                  >
+                  <input
+                    type="text"
+                    formControlName="middle_name"
+                    class="form-control f-10"
+                    placeholder="Middle Name"
+                    [(ngModel)]="mname"
+                 
+                  />
+                  
+                </div> 
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                    <label class="lbl"
+                    >Last Name <span class="required-asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    formControlName="last_name"
+                    class="form-control f-10"
+                    placeholder="Last Name"
+                    [(ngModel)]="lname"
+                    [ngClass]="{
+                      'is-invalid': submitted && f.last_name.errors
+                    }"
+                  />
+                  <div
+                    *ngIf="
+                      (submitted && f.last_name.errors) ||
+                      (f.last_name.invalid &&
+                        (f.last_name.dirty || f.last_name.touched))
+                    "
+                    style="color: red; font-size: 12px"
+                  >
+                    <div *ngIf="f.last_name.errors.required">
+                      Last Name is required
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <label class="lbl"
+                      >Company Name <span class="required-asterisk">*</span></label
+                    >
+  
+                    <input
+                      type="text"
+                      class="form-control" placeholder="Company Name" [(ngModel)]="companyName"
+                      formControlName="company_name" [ngClass]="{
+                        'is-invalid': submitted && f.company_name.errors
+                      }"
+                    />
+                  </div>
+                </div>
+              <div class="row mt-2">
+                <div class="col-md-5">
+                  <label class="lbl"
+                    >Login Name <span class="required-asterisk">*</span></label
+                  >
+
+                  <input
+                    type="text"
+                    class="form-control" [(ngModel)]="email"
+                    formControlName="loginname" readonly="true"
+                  />
+                </div>
+                <div class="col-md-2"></div>
+                <!-- <div class="col-md-5">
+                  <label class="lbl"
+                    >Password <span class="required-asterisk">*</span></label
+                  ><br />
+                  <input
+                    type="password"
+                    class="form-control"
+                    formControlName="password"
+                    readonly
+                  />
+                </div> -->
+              </div>
+
+              <!-- </div> -->
+            </div>
+            <br />
+            <div class="">
+              <h1 class="font-sans f-20">Contact Details</h1>
+              <!-- <a class="clear-all float-right" (click)="ff.resetForm();"
+                                    style="color:rgb(98, 98, 255); cursor: pointer;"><u>X Clear all</u></a> -->
+            </div>
+            <div class="row">
+            
+                <div class="row mt-2">
+                  <div class="col-md-5">
+                    <label class="lbl">Contact Number</label>
+                    <input
+                      type="text"
+                      class="form-control f-10"
+                      formControlName="mobile"
+                      [(ngModel)]="mobile"
+                      (keypress)="OnlyNumbersAllowed($event)"
+                      pattern="[0-9]{10}"
+                      minlength="10"
+                      maxlength="10"
+                    />
+                    <div
+                      *ngIf="f.mobile.errors"
+                      style="color: red; font-size: 12px"
+                    >
+                      <span *ngIf="f.mobile.errors?.pattern">
+                        Invalid Contact Number</span
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                  <div class="col-md-5">
+                    <label class="lbl"
+                      >Email-ID <span class="required-asterisk">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control f-10"
+                      formControlName="emailid"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.emailid.errors
+                      }"
+                      [(ngModel)]="email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                      id="email"
+                      placeholder="Email ID"
+                      required
+                    />
+                    <div
+                      *ngIf="f.emailid.errors"
+                      style="color: red; font-size: 12px"
+                    >
+                      <span *ngIf="f.emailid.errors?.pattern">
+                        Invalid Email ID</span
+                      >
+                    </div>
+                    <div
+                      *ngIf="
+                        (submitted && f.emailid.errors) ||
+                        (f.emailid.invalid &&
+                          (f.emailid.dirty || f.emailid.touched))
+                      "
+                      style="color: red; font-size: 12px"
+                    >
+                      <div *ngIf="f.emailid.errors.required">
+                        Email ID is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+           
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-3 col-sm-4"></div>
+          <div class="col-md-4 col-sm-4">
+            <button
+              [disabled]="form.invalid"
+              style="cursor: pointer"
+              id="savenupdate"
+              class="cust-create-btn"
+            >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm mr-1"
+              ></span>
+              UPDATE USER
+            </button>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,102 @@
+<div class="row">
+    <!-- <button (click)="routerPage()" class="btn btn-back">
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc3545" class="bi bi-arrow-return-left"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+             d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+       </svg> Back</button> -->
+ </div>
+ 
+ 
+ <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 col-xl-12"
+    style="background-color:#c5e8fc;margin-top: 0rem;border-radius: 3px;" *ngFor="let data of details">
+  
+    <div class="row">
+       <div class="col-md-2 col-sm-2">
+       </div>
+       <div class="col-md-3 col-sm-3">
+          <p id="myprofile"><strong><u>MY PROFILE</u></strong></p>
+       </div>
+    </div>
+ 
+    <div class="row">
+       <div class="col-md-2 col-sm-2">
+          <div class="image-responsive">
+             <img
+                style='height:150px;width:145px;margin-left:25px;margin-bottom:45px; max-width:100%;max-height: 100%;border-radius: 50%;object-fit: contain;border: solid 2px black'
+                src="../../assets/acs.png" />
+          </div>
+ 
+ 
+          <!-- <img id="imguser1" src=" assets/img/Trial 2.png"> -->
+ 
+       </div>
+       <div class="col-md-4 col-sm-4">
+          <p id="myprofile1">{{data.first_name}} {{data.last_name}}</p>
+          <p id="id">{{data.user_id}}
+          <p>
+       </div>
+    </div>
+ 
+    <div class="row">
+       <div class="col-md-3 col-sm-3" style="margin-top:10px">
+          <!-- <label id="designation"> <img id="bcase1"
+                src="assets/img/Briefcase.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Designation</b></label>
+          <p id="designation1">{{data.designation}}</p> -->
+          <label id="designation"> <img id="bcase1"
+                src="assets/Email Grey.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Email ID</b></label>
+          <p id="designation1">{{data.emailid}}</p>
+          <label id="designation"> <img id="bcase2"
+                src="assets/Telephone.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Contact No</b></label>
+          <p id="designation1">+91-{{data.mobile}}</p>
+         
+       </div>
+       <div class="col-md-1 col-sm-1">
+          <div class="vl"></div>
+       </div>
+ 
+ 
+       <div class="col-md-2 col-sm-2" style="margin-top:10px">
+          <p id="list">Login Name</p>
+          <p id="list">User Role</p>
+          
+        
+          <p id="list">User Type</p>
+        
+          <p id="list">Company Name</p>
+          <!-- <p id="list">Local ID</p>
+          <p id="list">Employee ID</p>
+          <p id="list"> VIP Status</p>
+  -->
+ 
+       </div>
+       <div class="col-md-3 col-sm-3" style="margin-top:10px">
+          <p id="list1">{{data.loginname}}</p>
+          <p id="list1">{{data.role}}</p>
+        
+          <p id="list1">{{data.usertype}}</p>
+         
+          <p id="list1">{{data.company_name}}</p>
+          <!-- <p id="list1">{{data.empid}}</p>
+          <p id="list1">{{data.eightid}}</p>
+          <p id="list1">{{data.vipstatus}}</p> -->
+ 
+ 
+       </div>
+       <div class="col-md-2 col-sm-2 text-center" style="margin-top:175px;display: flex;">
+         <button id="edit" type="submit" routerLink="/home">Cancel</button>&nbsp;
+          <button id="edit" (click)="OpenUpdate()" > EDIT</button>
+ 
+       </div>
+     
+    </div>
+ 
+    <br>
+ 
+    <!-- 
+ 
+ </div> -->
+ 
+ 
+ </div>
+ 

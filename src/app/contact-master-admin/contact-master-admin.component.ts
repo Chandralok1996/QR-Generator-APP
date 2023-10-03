@@ -95,7 +95,7 @@ masterToggle() {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   uploadResume(): void {
-    debugger
+    
     let formData: FormData = new FormData();
     for (let i = 0; i < this.excelFile.length; i++) {
       formData.append('images', this.excelFile[i]);

@@ -26,8 +26,8 @@
     </span>
   <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon></button> 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item><mat-icon>person</mat-icon><span>User Profile</span></button>
-    <button mat-menu-item><mat-icon>settings</mat-icon><span>Settings</span></button>
+    <button mat-menu-item [routerLink]="['/user-profile',userid]"><mat-icon>person</mat-icon><span>User Profile</span></button>
+    <button mat-menu-item [routerLink]="['/reset-password',userid]"><span class="material-icons">password</span>&nbsp;&nbsp;<span>Change Password</span></button>
     <button mat-menu-item (click)="signOut()"><mat-icon>power_settings_new</mat-icon><span>Sign Out</span></button>
   </mat-menu>
 </mat-toolbar>

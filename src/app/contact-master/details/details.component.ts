@@ -9,7 +9,7 @@ import { ToasterService, AppService } from 'src/app/_service';
 })
 export class DetailsComponent implements OnInit {
   id: any;
-  contactData: any;
+  contactData: any = [];
   viewContactData: any;
 
   constructor(private toster: ToasterService, private route: ActivatedRoute, private service: AppService) {
@@ -21,30 +21,32 @@ export class DetailsComponent implements OnInit {
   }
 
   getData(match: number): void {
+    
     this.service.getContactDetails(match).subscribe((res: any) => {
       if(res.status == 200) {
-        this.viewData(res.data)
-        this.toster.success(res.message, "Success");
-      } else {
-        this.toster.error(res.message, "Error");
-      }
+        this.contactData = res.data;
+        console.log(this.contactData.key)
+          this.toster.success(res.message, "Success");
+        } else {
+          this.toster.error(res.message, "Error");
+        }
     }),
     (error: any) => {
       this.toster.error(`Technical issue ${error}`, "Error");
     };
   }
 
-  viewData(data: any): void {
-    this.viewContactData = data;
-    var k: any = [];
-    var vKey: any = Object.keys(data[0]);
-    vKey.forEach((i: any) => {
-      this.viewContactData.forEach((j: any) => {
-        k.push({key:i,value:j[i]})
-      });
-    });
-    this.contactData = k;
-  }
+  // viewData(data: any): void {
+  //   this.viewContactData = data;
+  //   var k: any = [];
+  //   var vKey: any = Object.keys(data[0]);
+  //   vKey.forEach((i: any) => {
+  //     this.viewContactData.forEach((j: any) => {
+  //       k.push({key:i,value:j[i]})
+  //     });
+  //   });
+  //   this.contactData = k;
+  // }
 
   refresh(): void {
     this.ngOnInit();

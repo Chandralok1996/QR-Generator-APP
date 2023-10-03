@@ -106,6 +106,10 @@ export class AppService {
         });
     return this._http.get<any[]>(`${environment._url}/contact?${params}`, httpOptions);
   }
+  getUserProfileDetails(user_id: number): Observable<any[]> {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','auth-token': JSON.parse(localStorage.getItem('user') || '').token})};
+    return this._http.get<any[]>(`${environment._url}/user/api/v1/getUserDetails/${user_id}`, httpOptions);
+  }
   getUserContactDetails(user_id: number): Observable<any[]> {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','auth-token': JSON.parse(localStorage.getItem('user') || '').token})};
     return this._http.get<any[]>(`${environment._url}/user/api/v1/getUserDetails/${user_id}`, httpOptions);
@@ -123,7 +127,11 @@ export class AppService {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','auth-token': JSON.parse(localStorage.getItem('user') || '').token})};
     return this._http.put<any[]>(`${environment._url}/user/api/v1/updateUserStatus`, data, httpOptions);
   }
-
+  updateUserDetails(data: any): Observable<any[]> {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','auth-token': JSON.parse(localStorage.getItem('user') || '').token})};
+    return this._http.put<any[]>(`${environment._url}/user/api/v1/updateuser`, data, httpOptions);
+  }
+  
   resetUserPassword(data: any): Observable<any[]> {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
     return this._http.put<any[]>(`${environment._url}/api/v1/resetpassword`, data, httpOptions);
